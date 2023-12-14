@@ -25,4 +25,6 @@ def uelch_statistic_check(X1 : pd.Series, X2 : pd.Series,
     test_statistics = ((X1_average - X2_average) - work_days)/np.sqrt(s1/n1 + s2/n2)
     
     #из условий формулироваки гипотезы, понимаем что у нас левосторонний критерий
-    return test_statistics > test_statistics_critical
+    result = test_statistics > test_statistics_critical
+    
+    return result, test_statistics, test_statistics_critical
